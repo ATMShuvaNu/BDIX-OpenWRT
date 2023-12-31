@@ -14,6 +14,12 @@ iptable_start() {
     # Run iptable commands
     iptables -t nat -N BDIX
 
+    # Direct connections for specific domains
+    iptables -t nat -A BDIX -d discoveryftp.net -j RETURN
+    iptables -t nat -A BDIX -d speedtext.net -j RETURN
+    iptables -t nat -A BDIX -d facebook.com -j RETURN
+    iptables -t nat -A BDIX -d youtube.com -j RETURN
+
     iptables -t nat -A BDIX -d 0.0.0.0/8 -j RETURN
     iptables -t nat -A BDIX -d 10.0.0.0/8 -j RETURN
     iptables -t nat -A BDIX -d 127.0.0.0/8 -j RETURN
