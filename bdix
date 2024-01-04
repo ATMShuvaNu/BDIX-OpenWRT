@@ -15,10 +15,41 @@ iptable_start() {
     iptables -t nat -N BDIX
 
     # Direct connections for specific domains
-    iptables -t nat -A BDIX -d discoveryftp.net -j RETURN
-    iptables -t nat -A BDIX -d speedtext.net -j RETURN
-    iptables -t nat -A BDIX -d facebook.com -j RETURN
-    iptables -t nat -A BDIX -d youtube.com -j RETURN
+    iptables -t nat -A BDIX -d ad.com -j REJECT
+    iptables -t nat -A BDIX -d analytics.google.com -j REJECT
+    iptables -t nat -A BDIX -d analyticsinsights-pa.googleapis.com -j REJECT
+    iptables -t nat -A BDIX -d analyticsreporting.googleapis.com -j REJECT
+    iptables -t nat -A BDIX -d doubleclick.net -j REJECT
+    iptables -t nat -A BDIX -d googleadservices.com -j REJECT
+    iptables -t nat -A BDIX -d googleadsserving.cn -j REJECT
+    iptables -t nat -A BDIX -d googlesyndication.com -j REJECT
+    iptables -t nat -A BDIX -d googletagmanager.com -j REJECT
+    iptables -t nat -A BDIX -d googletagservices.com -j REJECT
+    iptables -t nat -A BDIX -d google-analytics.com -j REJECT
+    iptables -t nat -A BDIX -d tracker.torrent.eu.org -j REJECT
+    iptables -t nat -A BDIX -d tracker.opentrackr.org -j REJECT
+    iptables -t nat -A BDIX -d open.stealth.si -j REJECT
+    iptables -t nat -A BDIX -d exodus.desync.com -j REJECT
+    iptables -t nat -A BDIX -d ggpht.com -j REJECT
+    iptables -t nat -A BDIX -d nyaa.tracker.wf -j REJECT
+    iptables -t nat -A BDIX -d adservice -j REJECT
+    iptables -t nat -A BDIX -d analytics -j REJECT
+    iptables -t nat -A BDIX -d analysis -j REJECT
+    iptables -t nat -A BDIX -d googleads -j REJECT
+    iptables -t nat -A BDIX -d facebook -j REJECT
+    iptables -t nat -A BDIX -d torrentbd -j REJECT
+    iptables -t nat -A BDIX -d fbcdn -j REJECT
+    iptables -t nat -A BDIX -d youtube -j REJECT
+    iptables -t nat -A BDIX -d googlevideo -j REJECT
+    iptables -t nat -A BDIX -d discoveryftp -j REJECT
+    iptables -t nat -A BDIX -d circleftp -j REJECT
+    iptables -t nat -A BDIX -s 192.168.1.201/32 -j RETURN
+    iptables -t nat -A BDIX -d telegram.org -j RETURN
+    iptables -t nat -A BDIX -d whatsapp.com -j RETURN
+    iptables -t nat -A BDIX -d speedtest.net -j RETURN
+    iptables -t nat -A BDIX -d speedtest.com.sg -j RETURN
+    iptables -t nat -A BDIX -d 172.16.50.4 -j RETURN
+
 
     iptables -t nat -A BDIX -d 0.0.0.0/8 -j RETURN
     iptables -t nat -A BDIX -d 10.0.0.0/8 -j RETURN
